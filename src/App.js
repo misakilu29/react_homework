@@ -7,21 +7,28 @@ import {
 import React, { useState } from 'react'
 
 // 頁面用元件
-import Home from './pages/Home'
-import About from './pages/About'
 import Login from './pages/Login'
+import Home from './pages/Home/Home'
+import AdoptList from './pages/AdoptList'
+import ProductDog from './pages/ProductDog'
+import ProductCat from './pages/ProductCat'
+import HotelList from './pages/HotelList'
+import BlogList from './pages/BlogList/BlogList'
+import Member from './pages/Member'
 import NotFoundPage from './pages/NotFoundPage'
-import ProductCategory from './pages/ProductCategory'
 
-import Done from './pages/Done'
-import EmptyCart from './pages/EmptyCart'
-import MyOrder from './pages/MyOrder'
-import FailPage from './pages/FailPage'
-import OrderDetail from './pages/OrderDetail'
-import ShopList from './pages/ShopList'
-import ShoppingCart from './pages/ShoppingCart'
-import ProductList from './pages/ProductList'
-// import Cart from './pages/Cart'
+//screen用
+import ProductScreen from './screens/ProductScreen'
+import HomeScreen from './screens/HomeScreen'
+
+import LuCartDone from './pages/ShoppingCart/LuCartDone'
+import LuCartEmptyCart from './pages/ShoppingCart/LuCartEmptyCart'
+import LuCartMyOrder from './pages/ShoppingCart/LuCartMyOrder'
+import LuCartFailPage from './pages/ShoppingCart/LuCartFailPage'
+import LuCartOrderDetail from './pages/ShoppingCart/LuCartOrderDetail'
+import LuCartShopList from './pages/ShoppingCart/LuCartShopList'
+// import LuCartShoppingCart from './pages/ShoppingCart/LuCartShoppingCart'
+import LuCartConfirmPage from './pages/ShoppingCart/LuCartConfirmPage'
 
 // 組合用元件
 import MyNavbar from './components/MyNavbar'
@@ -48,48 +55,74 @@ function App() {
           <ScrollToTop>
             <Switch>
               <Route path="/done">
-                <Done />
+                <LuCartDone />
               </Route>
               <Route path="/EmptyCart">
-                <EmptyCart />
+                <LuCartEmptyCart />
               </Route>
               <Route path="/MyOrder">
-                <MyOrder />
+                <LuCartMyOrder />
               </Route>
               <Route path="/login">
                 {/* 利用props傳入頁面元件狀態 */}
                 <Login auth={auth} setAuth={setAuth} />
               </Route>
-              <Route path="/about">
-                <About auth={auth} />
-              </Route>
-              <Route exact path="/">
-                <Home auth={auth} />
-              </Route>
-              <Route path="/productcategory">
-                <ProductCategory />
-              </Route>
               <Route path="/FailPage">
-                <FailPage auth={auth} />
+                <LuCartFailPage auth={auth} />
               </Route>
               <Route path="/OrderDetail">
-                <OrderDetail />
+                <LuCartOrderDetail />
               </Route>
               <Route path="/ShopList">
-                <ShopList />
+                <LuCartShopList />
               </Route>
-              <Route path="/ShoppingCart">
-                <ShoppingCart />
+              <Route
+                path="/products/:id"
+                component={ProductScreen}
+              ></Route>
+              {/* <Route path="/ShoppingCart">
+                <LuCartShoppingCart />
+              </Route> */}
+              <Route path="/ConfirmPage">
+                <LuCartConfirmPage />
               </Route>
-              <Route path="*">
-                <NotFoundPage />
+              <Route path="/bloglist">
+                <BlogList />
               </Route>
-              <Route path="/productlist">
-                <ProductList />
+              <Route path="/productlist/dog">
+                <ProductDog />
+              </Route>
+              <Route path="/productlist/cat">
+                <ProductCat />
               </Route>
               {/* <Route path="/cart">
                 <Cart />
               </Route> */}
+              <Route path="/hotellist">
+                <HotelList auth={auth} />
+              </Route>
+              <Route path="/adoptlist">
+                <AdoptList auth={auth} />
+              </Route>
+              <Route
+                path="/home"
+                // className={
+                //   location.pathname === '/home'
+                //     ? 'MultiLevelBreadCrumb-hidden'
+                //     : 'MultiLevelBreadCrumb-show'
+                // }
+              >
+                <Home auth={auth} />
+              </Route>
+              <Route path="/member">
+                <Member auth={auth} />
+              </Route>
+              <Route path="/" exact>
+                <HomeScreen />
+              </Route>
+              <Route path="*">
+                <NotFoundPage />
+              </Route>
             </Switch>
             {/* end 匹配路由表 */}
           </ScrollToTop>

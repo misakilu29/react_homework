@@ -6,10 +6,6 @@ export const prodUrl = 'http://www.abc.com'
 export const pathnameList = [
   '/about',
   '/login',
-  '/productcategory',
-  '/productcategory/pc',
-  '/productcategory/mobile',
-  '/productcategory/notebook',
   '/done',
   '/emptycart',
   '/failpage',
@@ -21,10 +17,6 @@ export const pathnameList = [
 export const pathnameTextList = [
   '/關於我們',
   '/會員登入',
-  '/產品分類',
-  '/產品分類/電腦PC',
-  '/產品分類/手機',
-  '/產品分類/筆記型電腦',
   '/完成畫面',
   '/空購物車',
   '/失敗頁',

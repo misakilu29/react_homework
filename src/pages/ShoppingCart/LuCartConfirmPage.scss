@@ -1,0 +1,54 @@
+.processtag {
+    width: 40px;
+    height: 40px;
+    background: #F5DF4D;
+    border-radius: 50pt;
+    position: relative;
+}
+.progressnum1 {
+    font-size: 24px;
+    position:absolute;
+    margin-left: 34%;
+}
+.progresstitle {
+    font-size: 24px;
+    margin-left: 10px;
+}
+.processtag2 {
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: #646464;
+    border-radius: 50pt;
+    position: relative;
+}
+.progressnum2 {
+    font-size: 24px;
+    position:absolute;
+    margin-left: 34%;
+}
+.progresstitle2 {
+    font-size: 24px;
+    margin-left: 10px;
+}
+.processtag3 {
+    width: 40px;
+    height: 40px;
+    color:white;
+    background: #646464;
+    border-radius: 50pt;
+    position: relative;
+}
+.progressnum3 {
+    font-size: 24px;
+    position:absolute;
+    margin-left: 34%;
+}
+.progresstitle3 {
+    font-size: 24px;
+    margin-left: 10px;
+}
+.DataInputArea{
+    display: flex;
+    justify-content: space-between;
+}

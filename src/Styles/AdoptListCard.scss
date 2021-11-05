@@ -1,0 +1,94 @@
+.card1 {
+  border: none;
+  cursor: pointer;
+}
+
+.card1:hover {
+  transform: scale(1.02);
+  box-shadow: 1px 2px 15px rgba(94, 91, 91, 0.126);
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.avatar > img {
+  width: 100%;
+}
+
+.m-avatar {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+.m-avatar > img {
+  width: 100%;
+}
+
+.adoptCardContent:hover {
+  text-decoration: none;
+}
+
+.cardTitle {
+  color: #000;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  color: #646464;
+  text-decoration: none;
+}
+
+.m-cardText {
+  font-size: 1rem;
+  color: #646464;
+  text-decoration: none;
+}
+
+.btnSection {
+  background-color: transparent;
+}
+
+.YellowOutlineBtn {
+  width: 200px;
+  border-radius: 20px;
+  border: 2px solid #f5df4d;
+  background-color: #fff;
+  color: #646464;
+  margin: 5px 0px 25px 0px;
+  text-align: center;
+}
+
+.YellowOutlineBtn:hover {
+  background-color: #f5df4d;
+  border-color: #fff;
+  color: white;
+}
+
+.knowmoreBtn:hover {
+  text-decoration: none;
+}
+
+.m-YellowOutlineBtn {
+  width: 180px;
+  border-radius: 20px;
+  border: 2px solid #f5df4d;
+  background-color: #fff;
+  color: #646464;
+  text-align: center;
+}
+
+.m-YellowOutlineBtn:active {
+  background-color: #f5df4d;
+  border-color: #fff;
+  color: white;
+  text-decoration: none;
+}

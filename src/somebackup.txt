@@ -1,0 +1,6 @@
+nodemon --watch backend --exec node experimental-modules backend/server.js
+
+package.json
+
+後端啟動
+node backend/server.js
