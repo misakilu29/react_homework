@@ -10,29 +10,29 @@ import React, { useState } from 'react'
 import Login from './pages/Login'
 import Home from './pages/Home/Home'
 import AdoptList from './pages/AdoptList'
-import ProductList from './pages/ProductList'
 import ProductDog from './pages/ProductDog'
 import ProductCat from './pages/ProductCat'
 import HotelList from './pages/HotelList'
 import BlogList from './pages/BlogList/BlogList'
-import SignUp from './pages/sign-up/SignUp'
-import Login from './pages/login/Login'
-import Member from './pages/member/Member'
+import Member from './pages/Member'
 import NotFoundPage from './pages/NotFoundPage'
 
-import Done from './pages/Done'
-import EmptyCart from './pages/EmptyCart'
-import MyOrder from './pages/MyOrder'
-import FailPage from './pages/FailPage'
-import OrderDetail from './pages/OrderDetail'
-import ShopList from './pages/ShopList'
-import ShoppingCart from './pages/ShoppingCart'
-import ConfirmPage from './pages/ConfirmPage'
+//screen用
+import ProductScreen from './screens/ProductScreen'
+// import HomeScreen from './screens/HomeScreen'
+
+import LuCartDone from './pages/ShoppingCart/LuCartDone'
+import LuCartEmptyCart from './pages/ShoppingCart/LuCartEmptyCart'
+import LuCartMyOrder from './pages/ShoppingCart/LuCartMyOrder'
+import LuCartFailPage from './pages/ShoppingCart/LuCartFailPage'
+import LuCartOrderDetail from './pages/ShoppingCart/LuCartOrderDetail'
+import LuCartShopList from './pages/ShoppingCart/LuCartShopList'
+// import LuCartShoppingCart from './pages/ShoppingCart/LuCartShoppingCart'
+import LuCartConfirmPage from './pages/ShoppingCart/LuCartConfirmPage'
 
 // 組合用元件
 import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
-import AuthHeader from './components/AuthHeader'
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
 //import BreadCrumb from './components/BreadCrumb'
@@ -40,33 +40,6 @@ import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 
 function App() {
   const [auth, setAuth] = useState(false)
-
-  //Sharon註冊功能--------------------------------------
-  const [fields, setFields] = useState({
-    name: '',
-    nickname: '',
-    email: '',
-    password: '',
-    confirmPassword: '', // 有可能只是在瀏覽器檢查用而已
-    birthday: '',
-    mobile: '',
-    address: '',
-  })
-  // 2.存入錯誤訊息用
-  const [fieldErrors, setFieldErrors] = useState({
-    name: '',
-    nickname: '',
-    email: '',
-    password: '',
-    confirmPassword: '', // 有可能只是在瀏覽器檢查用而已
-    birthday: '',
-    mobile: '',
-    address: '',
-  })
-  //上相片呈現資料資料----------
-  const [imgSrc, setImgSrc] = useState('')
-
-  //Sharon--------------------------------------------
 
   return (
     <Router>
@@ -80,38 +53,38 @@ function App() {
           {/* 切換顯示的元件畫面放在這下面 */}
           {/* ScrollToTop是為了讓連到另一頁內容時，頁面回到最上方 */}
           <ScrollToTop>
-            <AuthHeader setAuth={setAuth} />
             <Switch>
               <Route path="/done">
-                <Done />
+                <LuCartDone />
               </Route>
               <Route path="/EmptyCart">
-                <EmptyCart />
+                <LuCartEmptyCart />
               </Route>
               <Route path="/MyOrder">
-                <MyOrder />
+                <LuCartMyOrder />
               </Route>
               <Route path="/login">
                 {/* 利用props傳入頁面元件狀態 */}
                 <Login auth={auth} setAuth={setAuth} />
               </Route>
               <Route path="/FailPage">
-                <FailPage auth={auth} />
+                <LuCartFailPage auth={auth} />
               </Route>
               <Route path="/OrderDetail">
-                <OrderDetail />
+                <LuCartOrderDetail />
               </Route>
               <Route path="/ShopList">
-                <ShopList />
+                <LuCartShopList />
               </Route>
-              <Route path="/ShoppingCart">
-                <ShoppingCart />
-              </Route>
+              <Route
+                path="/products/:id"
+                component={ProductScreen}
+              ></Route>
+              {/* <Route path="/ShoppingCart">
+                <LuCartShoppingCart />
+              </Route> */}
               <Route path="/ConfirmPage">
-                <ConfirmPage />
-              </Route>
-              <Route path="*">
-                <NotFoundPage />
+                <LuCartConfirmPage />
               </Route>
               <Route path="/bloglist">
                 <BlogList />
@@ -121,9 +94,6 @@ function App() {
               </Route>
               <Route path="/productlist/cat">
                 <ProductCat />
-              </Route>
-              <Route path="/productlist">
-                <ProductList />
               </Route>
               {/* <Route path="/cart">
                 <Cart />
@@ -144,35 +114,14 @@ function App() {
               >
                 <Home auth={auth} />
               </Route>
-              <Route path="/admin/user/:task?">
-                <Member
-                  auth={auth}
-                  setAuth={setAuth}
-                  fields={fields}
-                  setFields={setFields}
-                  fieldErrors={fieldErrors}
-                  setFieldErrors={setFieldErrors}
-                  imgSrc={imgSrc}
-                  setImgSrc={setImgSrc}
-                />
+              <Route path="/member">
+                <Member auth={auth} />
               </Route>
-              <Route path="/admin">
-                <Member auth={auth} setAuth={setAuth} />
-              </Route>
-              <Route path="/signup">
-                {/* 利用props傳入頁面元件狀態 */}
-                <SignUp
-                  fields={fields}
-                  setFields={setFields}
-                  fieldErrors={fieldErrors}
-                  setFieldErrors={setFieldErrors}
-                  imgSrc={imgSrc}
-                  setImgSrc={setImgSrc}
-                />
-              </Route>
-              <Route path="/login">
-                {/* 利用props傳入頁面元件狀態 */}
-                <Login auth={auth} setAuth={setAuth} />
+              {/* <Route path="/" exact>
+                <HomeScreen />
+              </Route> */}
+              <Route path="*">
+                <NotFoundPage />
               </Route>
             </Switch>
             {/* end 匹配路由表 */}

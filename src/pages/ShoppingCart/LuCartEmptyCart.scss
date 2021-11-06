@@ -1,7 +1,7 @@
 .card {
     max-width: 1200px;
 }
-.dogshop {
+.Dogshop {
     color: #646464;
     /* margin-top: 0.5rem; */
     /* margin-bottom: 0.5rem; */
@@ -13,26 +13,26 @@
     font-size: 0.9rem;
     line-height: 1.2rem;
 }
-.dogshop:hover {
+.Dogshop:hover {
     color:white;
     background: #646464;
 }
-.catshop {
+.Catshop {
     color: #646464;
     /* margin-top: 0.5rem; */
     /* margin-bottom: 0.5rem; */
     /* margin-left: 12; */
     background: white;
     border: 1px solid #F5DF4D;
-    border-radius: 50pt;
+    border-radius: 50px;
     width: 130px;
     font-size: 0.9rem;
     line-height: 1.2rem;
 }
-.catshop:hover {
+.Catshop:hover {
     color:white;
     background: #F5DF4D;
 }
-.empty_notice {
+.Empty_notice {
     text-align: center;
 }

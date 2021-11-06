@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import '../Done.css'
+import './LuCartDone.scss'
 
 function Done(props) {
   // const { auth } = props
@@ -16,20 +16,15 @@ function Done(props) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/" className="navbar-brand">
-          Mao Planet
-        </Link>
-      </nav>
       <div className="container main-contant py-5">
         <div className="mt-3">
           <div className="col-mb-12">
             <div className="card">
-              <div className="card-header text-center">
+              <div className="card-header text-center DoneHeaderTitle">
                 訂單成立
               </div>
               <div className="card-body mx-auto">
-                <div className="list-unstyled">
+                <div className="list-unstyled OrderNotice">
                   <li>已收到您的訂單</li>
                   <li>訂單編號</li>
                   <li>商品預計於2021/09/05開始配送</li>
@@ -41,13 +36,13 @@ function Done(props) {
               <div className="text-center mb-5">
                 <Link
                   to="/MyOrder"
-                  className="btn mx-auto backtoshop"
+                  className="btn mx-auto Backtoshop"
                 >
                   前往我的訂單
                 </Link>
                 <Link
                   to="/About"
-                  className="btn mx-auto backtotoppage"
+                  className="btn mx-auto Backtotoppage"
                 >
                   返回首頁
                 </Link>

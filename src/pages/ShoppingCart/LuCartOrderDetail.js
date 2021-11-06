@@ -1,6 +1,6 @@
 import React from 'react'
-import { withRouter, Link } from 'react-router-dom'
-// import '../EmptyCart.css'
+import { withRouter } from 'react-router-dom'
+import './LuCartOrderDetail.scss'
 
 function MyOrder(props) {
   // const { auth } = props
@@ -16,22 +16,17 @@ function MyOrder(props) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/" className="navbar-brand">
-          Mao Planet
-        </Link>
-      </nav>
       <div className="container main-contant py-5">
         {/* <!-- 購物車細節區 --> */}
         <div className="card text-center">
-          <div className="card-header">
+          <div className="card-header OrderDetailHeaderTitle">
             訂單編號. R2021090200001|訂單已完成
           </div>
         </div>
         <div className="mt-4">
           <div className="col-sm-6 mx-auto">
             <div className="card">
-              <div className="card-header text-center">
+              <div className="card-header text-center OrderDetailHeaderTitle">
                 收貨人資訊
               </div>
               <div className="card-body">
@@ -91,7 +86,7 @@ function MyOrder(props) {
         <div className="mt-3">
           <div className="col-mb-12">
             <div className="card">
-              <div className="card-header text-center">
+              <div className="card-header text-center OrderDetailHeaderTitle">
                 商品資訊
               </div>
               <div className="card-body">

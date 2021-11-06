@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
-import '../FailPage.css'
+import './LuCartFailPage.scss'
 
 function FailPage(props) {
   const { auth } = props
@@ -16,11 +16,6 @@ function FailPage(props) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
-          Mao Planet
-        </a>
-      </nav>
       <div className="container main-contant py-5">
         <div className="mt-3">
           <div className="col-mb-12">
@@ -29,7 +24,7 @@ function FailPage(props) {
                 訂單失敗
               </div>
               <div className="card-body mx-auto">
-                <ul className="text-center list-unstyled">
+                <ul className="text-center list-unstyled FailNotice">
                   <li>
                     訂單編號:R2021090200001尚未完成訂購
                     <br />
