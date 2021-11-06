@@ -19,7 +19,7 @@ import NotFoundPage from './pages/NotFoundPage'
 
 //screen用
 import ProductScreen from './screens/ProductScreen'
-import HomeScreen from './screens/HomeScreen'
+// import HomeScreen from './screens/HomeScreen'
 
 import LuCartDone from './pages/ShoppingCart/LuCartDone'
 import LuCartEmptyCart from './pages/ShoppingCart/LuCartEmptyCart'
@@ -117,9 +117,9 @@ function App() {
               <Route path="/member">
                 <Member auth={auth} />
               </Route>
-              <Route path="/" exact>
+              {/* <Route path="/" exact>
                 <HomeScreen />
-              </Route>
+              </Route> */}
               <Route path="*">
                 <NotFoundPage />
               </Route>

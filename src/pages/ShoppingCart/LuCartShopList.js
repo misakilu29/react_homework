@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import axios from 'axios'
 import Product from '../../components/Product'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../../actions/productActions'
 
 function ShopList() {
-  const [products, setProducts] = useState([])
+  const dispatch = useDispatch()
+  const productList = useSelector(
+    (state) => state.productList
+  )
+  const products = productList
+
   useEffect(() => {
-    const fetchData = async () =>{
-      const { data } = await axios.get('/api/products')
-      setProducts(data)
-    }
-    fetchData()
-  }, [])
+    dispatch(listProducts())
+  }, [dispatch])
   return (
     <>
       <div className="container main-contant py-5">
